@@ -66,7 +66,7 @@ const imageObserver = new IntersectionObserver((entries, observer) => {
                 };
                 img.onerror = () => {
                     console.error('Gagal memuat gambar:', src);
-                    img.src = 'images/placeholder.jpg'; // Optional: tambahkan placeholder
+                    img.src = './images/placeholder.png'; // Optional: tambahkan placeholder
                 };
                 img.removeAttribute('data-src');
             }
