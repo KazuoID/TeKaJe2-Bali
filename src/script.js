@@ -27,8 +27,8 @@ const generatePhotos = (start, count) => {
 
         photos.push({
             id: i,
-            thumb: `./images/${file.thumb}`,
-            full: `./images/${file.full}`,
+            thumb: `/images/${file.thumb}`,
+            full: `/images/${file.full}`,
             alt: file.title,
             category: file.category,
             title: file.title,
