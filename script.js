@@ -3,7 +3,7 @@
         const photosPerLoad = 12;
         
         // Koleksi foto dengan kategori berbeda
-        const categories = ['day 1', 'day 2', 'day 3'];
+        const categories = ['day-1', 'day-2', 'day-3'];
         
         const generatePhotos = (start, count, category = 'all') => {
             const photos = [];
