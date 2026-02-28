@@ -1,1 +1,1 @@
-# XI---TeKaJe2---Bali---2025
+# TeKaJe2 Bali 2025

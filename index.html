@@ -1,20 +1,23 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TeKaJ Gallery - Bali</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/src/style.css">
+
 </head>
+
 <body>
     <header>
         <div class="header-left">
-            <h1>TeKaJ Gallery in Bali</h1>
+            <h1>TeKaJe Gallery in Bali</h1>
             <div class="filter-buttons">
                 <button class="filter-btn active" data-filter="all">Semua</button>
-                <button class="filter-btn" data-filter="day-1">Day 1</button>
-                <button class="filter-btn" data-filter="day-2">Day 2</button>
-                <button class="filter-btn" data-filter="day-3">Day 3</button>
+                <button class="filter-btn" data-filter="day1">Day 1</button>
+                <button class="filter-btn" data-filter="day2">Day 2</button>
+                <button class="filter-btn" data-filter="day3">Day 3</button>
             </div>
         </div>
         <span class="photo-count" id="photoCount">0 / 0</span>
@@ -22,10 +25,12 @@
 
     <div class="gallery-container" id="gallery"></div>
 
+
     <div class="load-more-container">
         <div class="loader" id="loader"></div>
         <button class="load-more-btn" id="loadMoreBtn">Muat Lebih Banyak</button>
     </div>
+
 
     <!-- Lightbox -->
     <div id="lightbox" class="lightbox">
@@ -38,6 +43,8 @@
         </div>
         <div class="lightbox-caption" id="lightboxCaption"></div>
     </div>
-    <script src="./script.js"></script>
-  </body>
+    <script src="/src/script.js"></script>
+
+</body>
+
 </html>
