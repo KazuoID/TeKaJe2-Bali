@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TeKaJ Gallery - Bali</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <h1>TeKaJ Gallery in Bali</h1>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">Semua</button>
+                <button class="filter-btn" data-filter="day-1">Day 1</button>
+                <button class="filter-btn" data-filter="day-2">Day 2</button>
+                <button class="filter-btn" data-filter="day-3">Day 3</button>
+            </div>
+        </div>
+        <span class="photo-count" id="photoCount">0 / 0</span>
+    </header>
+
+    <div class="gallery-container" id="gallery"></div>
+
+    <div class="load-more-container">
+        <div class="loader" id="loader"></div>
+        <button class="load-more-btn" id="loadMoreBtn">Muat Lebih Banyak</button>
+    </div>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox">
+        <div class="lightbox-content">
+            <span class="close-btn" id="closeLightbox">&times;</span>
+            <span class="lightbox-nav prev" id="prevImage">&#10094;</span>
+            <span class="lightbox-nav next" id="nextImage">&#10095;</span>
+            <div class="lightbox-loader" id="lightboxLoader" style="display: none;"></div>
+            <img id="lightboxImg" class="lightbox-img" src="" alt="">
+        </div>
+        <div class="lightbox-caption" id="lightboxCaption"></div>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>
