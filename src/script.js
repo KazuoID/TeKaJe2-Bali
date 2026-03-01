@@ -1,22 +1,18 @@
 // --- KONFIGURASI ---
 const photosPerLoad = 12;
 
-// Daftar nama file gambar Anda - PINDAHKAN KE LUAR FUNGSI
 const imageFiles = [
-    { thumb: 'd3_v1_r.jpeg', full: 'd3_v1_r.jpeg', title: 'Pantai Sunset', category: 'day3' },
-    { thumb: 'd3_v2_r.jpeg', full: 'd3_v2_r.jpeg', title: 'Potret Wanita', category: 'day3' },
-    { thumb: 'd3_v3_r.jpeg', full: 'd3_v3_r.jpeg', title: 'Abstrak Geometris', category: 'day3' },
-    { thumb: 'd3_v4_r.jpeg', full: 'd3_v4_r.jpeg', title: 'Gunung Everest', category: 'day3' },
-    { thumb: 'd3_v5_r.jpeg', full: 'd3_v5_r.jpeg', title: 'Seni Jalanan', category: 'day3' },
-    // Tambahkan sesuai kebutuhan
+    { thumb: 'd3_v1_r.jpeg', full: 'd3_v1_r.jpeg', title: 'desa penglipuran 1', category: 'day3' },
+    { thumb: 'd3_v2_r.jpeg', full: 'd3_v2_r.jpeg', title: 'desa penglipuran 2', category: 'day3' },
+    { thumb: 'd3_v3_r.jpeg', full: 'd3_v3_r.jpeg', title: 'pusat oleh2 krisna 1', category: 'day3' },
+    { thumb: 'd3_v4_r.jpeg', full: 'd3_v4_r.jpeg', title: 'pusat oleh2 krisna 2', category: 'day3' },
+    { thumb: 'd3_v5_r.jpeg', full: 'd3_v5_r.jpeg', title: 'pusat oleh2 krisna 3', category: 'day3' },
 ];
 
-const totalPhotos = imageFiles.length; // Sekarang ini akan berfungsi
+const totalPhotos = imageFiles.length;
 
-// Koleksi foto dengan kategori berbeda
-const categories = ['day1', 'day2', 'day3'];
+const categories = ['day1', 'day2', 'day3', 'other'];
 
-// Fungsi generate photos
 const generatePhotos = (start, count) => {
     const photos = [];
 
@@ -27,13 +23,14 @@ const generatePhotos = (start, count) => {
 
         photos.push({
             id: i,
-            thumb: `/images/${file.thumb}`,
-            full: `/images/${file.full}`,
+            thumb: `src/images/${file.thumb}`,
+            full: `src/images/${file.full}`,
             alt: file.title,
             category: file.category,
             title: file.title,
             // photographer: `Photo ${(i % 3) + 1}`
-            photographer: `Photo ${i + 1}`
+            // photographer: `Photo ${i + 1}`
+            photographer: `TeKaJ 2 Family & Adit`
         });
     }
     return photos;
@@ -66,7 +63,7 @@ const imageObserver = new IntersectionObserver((entries, observer) => {
                 };
                 img.onerror = () => {
                     console.error('Gagal memuat gambar:', src);
-                    img.src = './images/placeholder.png'; // Optional: tambahkan placeholder
+                    img.src = 'src/images/thumbnail/1.jpg';
                 };
                 img.removeAttribute('data-src');
             }
@@ -84,7 +81,6 @@ function renderPhotos(photos) {
         const div = document.createElement('div');
         div.className = 'gallery-item';
         div.dataset.category = photo.category;
-
         div.innerHTML = `
                     <img data-src="${photo.thumb}" alt="${photo.alt}" data-full="${photo.full}" data-title="${photo.title}" data-photographer="${photo.photographer}">
                     <div class="image-info">
@@ -93,7 +89,6 @@ function renderPhotos(photos) {
                         <span>${photo.category}</span>
                     </div>
                 `;
-
         div.addEventListener('click', () => {
             currentPhotoIndex = allPhotos.findIndex(p => p.id === photo.id);
             openLightbox(photo);
@@ -263,10 +258,8 @@ document.addEventListener('keydown', (e) => {
 });
 
 // --- INITIALIZATION ---
-// Generate all photos
 for (let i = 0; i < totalPhotos; i += photosPerLoad) {
     allPhotos = [...allPhotos, ...generatePhotos(i, photosPerLoad)];
 }
 
-// Load initial batch
 filterPhotos('all');
